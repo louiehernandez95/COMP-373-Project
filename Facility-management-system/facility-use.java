@@ -15,7 +15,7 @@ public class FacilityUse {
     public void vacateFacility(Facility facility) {
 
     }
-    public Date[] ListInspections(Facility facility){
+    public Date[] listInspections(Facility facility){
 
     }
     public Float listActualUsage (Facility facility){

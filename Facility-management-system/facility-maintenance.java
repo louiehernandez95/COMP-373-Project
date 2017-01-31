@@ -6,7 +6,7 @@ import java.math.*;
 import java.sql.*;
 
 public class FacilityMaintenance {
-    public Date makeFacilityMaintenenceRequest(Facility facility){
+    public Date makeFacilityMaintRequest(Facility facility){
 
     }
     public Date scheduleMaintenance(Facility facility){
@@ -21,7 +21,7 @@ public class FacilityMaintenance {
     public Float calcDowntimeForFacility(Facility facility){
 
     }
-    public Date[] listMaintenanceRequests(Facility facility){
+    public Date[] listMaintRequests(Facility facility){
 
     }
     public Date[] listMaintenance(Facility facility){
