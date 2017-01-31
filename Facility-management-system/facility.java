@@ -8,7 +8,7 @@ public class Facility {
     public String listFacilities();
     public String requestAvailableCapacity();
     public String addNewFacility();
-    public String addFacilityDetail();
+    public void addFacilityDetail();
     public String removeFacility();
     public String getFacilityInformation(Facility facility){
         String info = ("Facility Name: " + facility.facilityName +"\nFacility Manager: " +
