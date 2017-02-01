@@ -16,4 +16,4 @@ public class Facility {
                 "\nUsage Rate: " + facility.usageRate);
         return info;
     }
-}
+} //Initial test commit
