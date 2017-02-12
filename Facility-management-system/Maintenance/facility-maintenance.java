@@ -12,13 +12,13 @@ public class FacilityMaintenance {
     private double Cost;
     private ArrayList<Facility1> facilities = new ArrayList<Facility1> ();
 
-    public Maintainance(){
+    public FacilityMaintenance(){
         this.Id = null;
         this.Type = null;
         this.Cost = 0.0;
     }
 
-    public Maintainance(String id, String type, double cost){
+    public FacilityMaintenance(String id, String type, double cost){
         this.Id = id;
         this.Type = type;
         this.Cost = cost;
