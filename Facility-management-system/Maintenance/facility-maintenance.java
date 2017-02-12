@@ -10,7 +10,7 @@ public class FacilityMaintenance {
     private String Id;
     private String Type;
     private double Cost;
-    private ArrayList<IFacility> facilities = new ArrayList<IFacility> ();
+    private ArrayList<Facility1> facilities = new ArrayList<Facility1> ();
 
     public Maintainance(){
         this.Id = null;
