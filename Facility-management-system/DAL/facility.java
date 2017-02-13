@@ -9,11 +9,10 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.ArrayList;
 
-import Facility.Facility;
-import Person.Address;
-import Person.Person;
+import facility-detail.facility-detail;
+import Usage Detail.person-detail;
 
-public class FacilityDao {
+public class FacilityDatabase {
 
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost/FMS";
@@ -22,7 +21,7 @@ public class FacilityDao {
     static final String USER = "root";
     static final String PASS = "root";
 
-    public FacilityDao(){
+    public FacilityDatabase(){
         try{
             Class.forName(JDBC_DRIVER);
         }
