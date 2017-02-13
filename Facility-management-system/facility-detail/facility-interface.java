@@ -1,9 +1,7 @@
 package DAL;
 
-import java.util.ArrayList;
 
 public interface Facility_Interface {
-
     public void listUnits();
     public String getFacilityInfo();
     public int getAvailableCapacity();
