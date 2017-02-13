@@ -1,5 +1,9 @@
 package Usage Detail;
 import java.util.ArrayList;
+import java.util.ArrayList;
+import facility-detail.facility-detail;
+import facility-detail.Facility_Interface;
+
 
 public class Address(){
     private String city;
@@ -115,11 +119,95 @@ public class Phone(){
         }
 }
 public class Person(){
-    private String FirstName=null;
-    private String LastName=null;
-    private String Gender=null;
-    private String Sex=null;
-    private String Age=null;
-    private String DateOfBirth=null;
-    private String Email=null;
+    private String firstName=null;
+    private String lastName=null;
+    private String gender=null;
+    private String sex=null;
+    private String age=null;
+    private String dateOfBirth=null;
+    private String email=null;
+    private ArrayList<Phone> phone = null;
+    private ArrayList<Address>address = null;
+    public ArrayList<Facility_Interface> usesFacility = new ArrayList<Facility_Interface> (); //change facility to IfacilityUse
+
+    public Person(){
+            this.address = new ArrayList<Address>();
+            this.phone = new ArrayList<Phone>();
+            }
+
+    public Person(String FirstName, String LastName, String DateOfBirth){
+            this.firstName = FirstName;
+            this.lastName = LastName;
+            this.dateOfBirth = DateOfBirth;
+            }
+    public String getFirstName(){
+            return this.firstName;
+            }
+
+    public void setFirstName(String FirstName){
+            this.firstName = FirstName;
+            }
+
+    public String getLastName(){
+            return this.lastName;
+            }
+
+    public void setLastName(String LastName){
+            this.lastName = LastName;
+            }
+    public String getFullName(){
+            return this.firstName + " " + this.lastName;
+            }
+
+    public ArrayList<Address> getAddress(){
+            return this.address;
+            }
+
+    public void addAddress(Address address){
+            this.address.add(address);
+            }
+
+    public boolean removeAddress(Address address){
+            if (this.address.contains(address)){
+            this.address.remove(address);
+            }
+            return !this.address.contains(address);
+            }
+
+    public ArrayList<Phone> getPhone(){
+            return this.phone;
+            }
+
+    public void addPhone(Phone phone){
+            this.phone.add(phone);
+            }
+
+    public boolean removePhone(Phone phone){
+            if (this.phone.contains(phone)){
+            this.phone.remove(phone);
+            }
+            return !this.phone.contains(phone);
+            }
+
+    public String getEmail(){
+            return this.email;
+            }
+
+    public void setEmail(String Email){
+            this.email = Email;
+            }
+
+    public String getDateOfBirth(){
+            return this.dateOfBirth;
+            }
+
+    public void setDateOfBirth(String dateOfBirth){
+            this.dateOfBirth = DateOfBirth;
+            }
+
+    public void listPersonFacilities(){
+            for (Facility_Interface f : usesFacility)
+            System.out.println(f.getFacilityInfo());
+            }
 }
+
