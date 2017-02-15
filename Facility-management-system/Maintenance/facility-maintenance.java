@@ -50,7 +50,7 @@ public class FacilityMaintenance {
 
     //Used All These Methods - ADIL A
 
-    //public Date makeFacilityMaintRequest(Facility facility){
+    //public Date makeFacilityMainRequest(Facility facility){
 
     }
     //public Date scheduleMaintenance(Facility facility){

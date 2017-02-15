@@ -41,9 +41,9 @@ public class Main {
 
         //Maintenance
 
-        Maintenance m1 = new Maintainance("1", "gas", 8.25);
-        Maintenance m2 = new Maintainance("2", "electric", 112.88);
-        Maintenance m3 = new Maintainance("3", "heat", 524.21);
+        Maintenance m1 = new Maintenance("1", "gas", 8.25);
+        Maintenance m2 = new Maintenance("2", "electric", 112.88);
+        Maintenance m3 = new Maintenance("3", "heat", 524.21);
 
         Facility_Interface Facility_Interface = new FacilityUsage ();
         Facility_Interface.assignFacilityToUse(p1,F1);
