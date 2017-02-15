@@ -2,7 +2,7 @@ package facility-detail;
 
 import java.util.ArrayList;
 
-import Maintenance.facility-maintainance;
+import Maintenance.facility-maintenance;
 import Usage Detail;
 
 public class facility-detail implements facility_interface{
@@ -17,7 +17,7 @@ public class facility-detail implements facility_interface{
     private ArrayList<Floors> numFloors;
     private ArrayList<Unit> Units;
     public ArrayList<Inspection> inspections = new ArrayList<Inspection>();
-    public ArrayList<Maintainance> maintainances = new ArrayList<Maintainance>();
+    public ArrayList<Maintenance> maintenances = new ArrayList<Maintenance>();
     private double usage;
 
     public Facility(){
