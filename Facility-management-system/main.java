@@ -41,9 +41,9 @@ public class Main {
 
         //Maintenance
 
-        Maintainance m1 = new Maintainance("1", "gas", 8.25);
-        Maintainance m2 = new Maintainance("2", "electric", 112.88);
-        Maintainance m3 = new Maintainance("3", "heat", 524.21);
+        Maintenance m1 = new Maintainance("1", "gas", 8.25);
+        Maintenance m2 = new Maintainance("2", "electric", 112.88);
+        Maintenance m3 = new Maintainance("3", "heat", 524.21);
 
         Facility_Interface Facility_Interface = new FacilityUsage ();
         Facility_Interface.assignFacilityToUse(p1,F1);
@@ -74,8 +74,8 @@ public class Main {
         ArrayList<Maintainance> temp = new ArrayList<Maintainance>();
         temp.add(m1);
         temp.add(m3);
-        MainUsage.scheduleMaintainance(F1, temp);
-        MainUsage.listMaintainance();
+        MainUsage.scheduleMaintenance(F1, temp);
+        MainUsage.listMaintenance();
         System.out.println();
         System.out.println();
         System.out.println("Maintenance cost for facility F1 is ");
