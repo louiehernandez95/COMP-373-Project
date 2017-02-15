@@ -3,11 +3,11 @@
 
 public MaintenanceRequest(){}
 
-public void makeFacilityMaintRequest(Maintainance maintainance, Facility1 facility) {
+public void makeFacilityMaintRequest(Maintainance maintainance, Facility_Interface facility) {
         maintainanceRequests.put(maintainance, facility);
         }
 
-public void calcMaintainanceCost(Facility1 facility) {
+public void calcMaintainanceCost(Facility_Interface facility) {
         double cost = 0.0;
         for (Entry<Facility1, ArrayList<Maintainance>> entry : scheduledMaintainances.entrySet()) {
         if (entry.getKey() == facility) {
@@ -18,9 +18,9 @@ public void calcMaintainanceCost(Facility1 facility) {
         System.out.println(Cost);
 }
 
-public void calcProblemRateForFacility(Facility1 facility) {
+public void calcProblemRateForFacility(Facility_Interface facility) {
         int problemrate = 0;
-        for (Entry<Maintainance, Facility1> entry : maintainanceRequests.entrySet()){
+        for (Entry<Maintainance, Facility_Interface> entry : maintainanceRequests.entrySet()){
         if (entry.getValue() == facility){
         if (entry.getKey().getType() == "Gas")
         problemrate = 1;
@@ -33,9 +33,9 @@ public void calcProblemRateForFacility(Facility1 facility) {
         System.out.println(ProblemRate);
 }
 
-public void calcDownTimeForFacility(Facility1 facility) {
+public void calcDownTimeForFacility(Facility_Interface facility) {
     int problemrate = 0;
-    for (Entry<Manintainance, Facility1> entry : manintainanceRequests.entrySet()){
+    for (Entry<Manintainance, Facility_Interface> entry : manintainanceRequests.entrySet()){
         if (entry.getValue() == facility){
             if (entry.getKey().getType() == "Tornado"
         problemrate = 4;
@@ -47,8 +47,8 @@ public void calcDownTimeForFacility(Facility1 facility) {
         System.out.println(DownTime);
         }
 
-public void listFacilityProblems(Facility1 facility) {
-        for (Entry<IFacility, ArrayList<Maintainance>> entry : scheduledMaintainances.entrySet()){
+public void listFacilityProblems(Facility_Interface facility) {
+        for (Entry<Facility_Interface, ArrayList<Maintainance>> entry : scheduledMaintainances.entrySet()){
         if (entry.getKey() == facility){
         for (Maintainance m : entry.getValue())
         System.out.println(m.getType());
@@ -56,12 +56,12 @@ public void listFacilityProblems(Facility1 facility) {
         }
 }
 
-public void scheduleMaintainance(Facility1 facility, ArrayList<Maintainance> maintainance) {
+public void scheduleMaintainance(Facility_Interface facility, ArrayList<Maintainance> maintainance) {
         scheduledMaintainances.put(facility,maintainance);
         }
 
 public void listMaintainance() {
-        for (Entry<Facility1, ArrayList<Maintainance>> entry : scheduledMaintainances.entrySet()){
+        for (Entry<Facility_Interface, ArrayList<Maintainance>> entry : scheduledMaintainances.entrySet()){
         System.out.println("Facility: " + entry.getKey().getFacilityInfo() + " requesting maintainances in...");
         for (Maintainance m : entry.getValue()){
         System.out.print(m.getType() + ", ");
@@ -70,7 +70,7 @@ public void listMaintainance() {
 }
 
 public void listMaintainanceRequest() {
-        for (Entry<Maintainance, Facility1> entry : maintainanceRequests.entrySet())
+        for (Entry<Maintainance, Facility_Interface> entry : maintainanceRequests.entrySet())
         System.out.println("Maintainance types: " + entry.getKey().getType() + " made by the facility" + entry.getValue().getFacilityInfo());
         }
 

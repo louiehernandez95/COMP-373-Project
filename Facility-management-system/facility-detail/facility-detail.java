@@ -125,16 +125,13 @@ public class facility-detail implements facility_interface{
     public void setDimensions(String dimensions) {
         this.dimensions = dimensions;
     }
-
-    /**
-     returns the address
+/**
+ returns the address
      */
     public Address getAddress() {
         return address;
     }
 
-    /**
-      the address to set
      */
     public void setAddress(Address address) {
         this.address = address;
