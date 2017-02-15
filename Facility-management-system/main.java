@@ -65,11 +65,11 @@ public class Main {
         MainUsage.makeFacilityMaintRequest(m1, F1);
         MainUsage.makeFacilityMaintRequest(m2, F2);
         MainUsage.makeFacilityMaintRequest(m3, F1);
-        System.out.println("Maintainance requests made by the facilitites are: ");
+        System.out.println("Maintenance requests made by the facilities are: ");
         System.out.println();
         MainUsage.listMaintainanceRequest();
         System.out.println();
-        System.out.println("Scheduled maintainances are: ");
+        System.out.println("Scheduled maintenance are: ");
         System.out.println();
         ArrayList<Maintainance> temp = new ArrayList<Maintainance>();
         temp.add(m1);
@@ -78,10 +78,10 @@ public class Main {
         MainUsage.listMaintainance();
         System.out.println();
         System.out.println();
-        System.out.println("Maintainance cost for facility F1");
+        System.out.println("Maintenance cost for facility F1 is ");
         MainUsage.calcMaintainanceCost(F1);
         System.out.println();
-        System.out.println("Problem rate for maintainance is: ");
+        System.out.println("Problem rate for maintenance is: ");
         MainUsage.calcProblemRate(F1);
 
         System.out.println();
