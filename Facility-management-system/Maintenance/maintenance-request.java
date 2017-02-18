@@ -73,5 +73,3 @@ public void listMaintenanceRequest() {
         for (Entry<Maintenance, Facility_Interface> entry : maintenanceRequests.entrySet())
         System.out.println("Maintenance types: " + entry.getKey().getType() + " made by the facility" + entry.getValue().getFacilityInfo());
         }
-
-        }

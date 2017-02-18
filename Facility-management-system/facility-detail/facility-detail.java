@@ -21,7 +21,7 @@ public class facility-detail implements facility_interface{
     private double usage;
 
     public Facility(){
-        //if no arguements passed set them as default
+        //if no arguments passed set them as default
         this.dimensions = "1000 * 1000";
         this.address = null;
         this.capacity = 10;
