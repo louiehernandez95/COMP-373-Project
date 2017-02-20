@@ -17,8 +17,8 @@ public class MainRequest implements MaintenanceUsage_Interface{
     public MainRequest(){}
 
     //interfaces methods begin here
-    public void makeFacilityMaintRequest(Maintenance maintEnance, Facility_Interface facility) {
-        maintenanceRequests.put(maintEnance, facility);
+    public void makeFacilityMaintRequest(Maintenance maintenance, Facility_Interface facility) {
+        maintenanceRequests.put(maintenance, facility);
     }
 
     public void listMaintenanceRequest() {
