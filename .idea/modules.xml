@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/COMP-373-Project1.iml" filepath="$PROJECT_DIR$/COMP-373-Project1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Facility_Management_System/DAL.iml" filepath="$PROJECT_DIR$/Facility_Management_System/DAL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Facility_Management_System/Facility_Management_System.iml" filepath="$PROJECT_DIR$/Facility_Management_System/Facility_Management_System.iml" />
       <module fileurl="file://$PROJECT_DIR$/source.code/source.code.iml" filepath="$PROJECT_DIR$/source.code/source.code.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Facility_Management_System/src.iml" filepath="$PROJECT_DIR$/Facility_Management_System/src.iml" />
     </modules>
   </component>
 </project>
