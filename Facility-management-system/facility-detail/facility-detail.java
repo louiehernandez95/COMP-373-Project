@@ -2,7 +2,7 @@ package facility-detail;
 
 import java.util.ArrayList;
 
-import Maintenance.facility-maintainance;
+import Maintenance.facility-maintenance;
 import Usage Detail;
 
 public class facility-detail implements facility_interface{
@@ -17,11 +17,11 @@ public class facility-detail implements facility_interface{
     private ArrayList<Floors> numFloors;
     private ArrayList<Unit> Units;
     public ArrayList<Inspection> inspections = new ArrayList<Inspection>();
-    public ArrayList<Maintainance> maintainances = new ArrayList<Maintainance>();
+    public ArrayList<Maintenance> maintenances = new ArrayList<Maintenance>();
     private double usage;
 
     public Facility(){
-        //if no arguements passed set them as default
+        //if no arguments passed set them as default
         this.dimensions = "1000 * 1000";
         this.address = null;
         this.capacity = 10;
@@ -125,16 +125,13 @@ public class facility-detail implements facility_interface{
     public void setDimensions(String dimensions) {
         this.dimensions = dimensions;
     }
-
-    /**
-     returns the address
+/**
+ returns the address
      */
     public Address getAddress() {
         return address;
     }
 
-    /**
-      the address to set
      */
     public void setAddress(Address address) {
         this.address = address;

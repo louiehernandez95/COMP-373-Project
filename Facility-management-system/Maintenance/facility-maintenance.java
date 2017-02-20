@@ -10,7 +10,7 @@ public class FacilityMaintenance {
     private String Id;
     private String Type;
     private double Cost;
-    private ArrayList<Facility1> facilities = new ArrayList<Facility1> ();
+    private ArrayList<Facility_Interface> facilities = new ArrayList<Facility_Interface> ();
 
     public FacilityMaintenance(){
         this.Id = null;
@@ -50,28 +50,25 @@ public class FacilityMaintenance {
 
     //Used All These Methods - ADIL A
 
-    //public Date makeFacilityMaintRequest(Facility facility){
+    //public Date makeFacilityMainRequest(Facility facility){}
 
-    }
-    //public Date scheduleMaintenance(Facility facility){
 
-    }
-   // public Float calcMaintenanceCostForFacility(Facility facility){
+    //public Date scheduleMaintenance(Facility facility){}
 
-    }
-    //public Float calcProblemRateForFacility(Facility facility){
 
-    }
-    //public Float calcDowntimeForFacility(Facility facility){
+   // public Float calcMaintenanceCostForFacility(Facility facility){}
 
-    }
-    //public Date[] listMaintRequests(Facility facility){
 
-    }
-   // public Date[] listMaintenance(Facility facility){
+    //public Float calcProblemRateForFacility(Facility facility){}
 
-    }
-    //public String[] listFacilityProblems(Facility facility){
 
-    }
-}
+    //public Float calcDowntimeForFacility(Facility facility){}
+
+
+    //public Date[] listMaintRequests(Facility facility){}
+
+
+   // public Date[] listMaintenance(Facility facility){}
+
+
+    //public String[] listFacilityProblems(Facility facility){}

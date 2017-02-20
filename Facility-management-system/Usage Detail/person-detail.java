@@ -14,20 +14,20 @@ public class Address(){
 
     public Address(){}
 
-    public Address(String homeAddress, String City, String State, String ZipCode, String Country){
+    public Address(String HomeAddress, String City, String State, String ZipCode, String Country){
             this.city=City;
-            this.HomeAddress = homeAdress;
+            this.HomeAddress = HomeAddress;
             this.state = State;
             this.zipCode = ZipCode;
             this.country = Country;
             }
 
     public String getHomeAddress(){
-            return this.HomeAdress;
+            return this.HomeAddress;
             }
 
-    public void setHomeAddress(String homeAdress){
-            this.HomeAdress = homeAdress;
+    public void setHomeAddress(String HomeAddress){
+            this.HomeAdress = HomeAddress;
             }
     public String getZipCode(){
             return this.zipCode;
@@ -62,7 +62,7 @@ public class Address(){
             }
 
     public String toString(){
-            return HomeAdress + " " + "\n" + city + ", " + state + " " + zipCode;
+            return HomeAddress + " " + "\n" + city + ", " + state + " " + zipCode;
             }
 
 }
@@ -128,7 +128,7 @@ public class Person(){
     private String email=null;
     private ArrayList<Phone> phone = null;
     private ArrayList<Address>address = null;
-    public ArrayList<Facility_Interface> usesFacility = new ArrayList<Facility_Interface> (); //change facility to IfacilityUse
+    public ArrayList<Facility_Interface> usesFacility = new ArrayList<Facility_Interface> ();
 
     public Person(){
             this.address = new ArrayList<Address>();
