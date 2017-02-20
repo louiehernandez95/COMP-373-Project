@@ -17,13 +17,13 @@ public class MainRequest implements MaintenanceUsage_Interface{
     public MainRequest(){}
 
     //interfaces methods begin here
-    public void makeFacilityMaintRequest(Maintenance maintainance, Facility_Interface facility) {
-        maintenanceRequests.put(maintainance, facility);
+    public void makeFacilityMaintRequest(Maintenance maintEnance, Facility_Interface facility) {
+        maintenanceRequests.put(maintEnance, facility);
     }
 
     public void listMaintenanceRequest() {
         for (Entry<Maintenance, Facility_Interface> entry : maintenanceRequests.entrySet())
-            System.out.println("Maintainance type: " + entry.getKey().getType() + " made by facility" + entry.getValue().getFacilityInfo());
+            System.out.println("MAINTENANCE TYPE: " + entry.getKey().getType() + " made by FACILITY " + entry.getValue().getFacilityInfo());
     }
 
     public void scheduleMaintenance(Facility_Interface facility, ArrayList<Maintenance> maintenance) {
@@ -32,7 +32,7 @@ public class MainRequest implements MaintenanceUsage_Interface{
 
     public void listMaintenance() {
         for (Entry<Facility_Interface, ArrayList<Maintenance>> entry : scheduledMaintenances.entrySet()){
-            System.out.println("Facility: " + entry.getKey().getFacilityInfo() + " requested following maintenances");
+            System.out.println("FACILITY: " + entry.getKey().getFacilityInfo() + "\nREQUESTED FOLLOWING MAINTENANCE(S):");
             for (Maintenance m : entry.getValue()){
                 System.out.print(m.getType() + ", ");
             }
@@ -50,17 +50,16 @@ public class MainRequest implements MaintenanceUsage_Interface{
         System.out.println(cost);
     }
 
-    //some hardcoded values here to check for problem rate
     public void calcProblemRate(Facility_Interface facility) {
         int problemrate = 0;
         for (Entry<Maintenance, Facility_Interface> entry : maintenanceRequests.entrySet()){
             if (entry.getValue() == facility){
-                if (entry.getKey().getType() == "water")
-                    problemrate = 1;
-                else if (entry.getKey().getType() == "gas")
+                if (entry.getKey().getType() == "Leaky Faucet")
                     problemrate = 2;
-                else if (entry.getKey().getType() == "electric")
-                    problemrate = 5;
+                else if (entry.getKey().getType() == "Broken Toilet")
+                    problemrate = 2;
+                else if (entry.getKey().getType() == "Gas Leak")
+                    problemrate = 3;
             }
         }
         System.out.println(problemrate);

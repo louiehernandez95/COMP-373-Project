@@ -8,9 +8,9 @@ import Facility_Maintenance.Maintenance;
 import Student_Detail.Address;
 import Student_Detail.Student;
 import Usage.FacilityUse;
+import Usage.MainRequest;
 import Usage.Use_Interface;
 import Usage.MaintenanceUsage_Interface;
-import Usage.MainRequest;
 
 
 public class Main 
@@ -35,45 +35,50 @@ public class Main
         
         Floors floor_1 = new Floors("1", 150, 1, 120.31, 241.41, 100, 4);
         Floors floor_2 = new Floors("80", 50, 20, 120.41, 241.41, 100, 4 );
-        Inspection I1 = new Inspection ("1", "12:00 pm", "General inspection");
-        Inspection Inspection_2 = new Inspection ("2", "1:00 pm", "Electric inspection");
-        Inspection Inspection_3 = new Inspection ("3", "12:00 pm", "Gas inspection");
+        Inspection Inspection_1 = new Inspection ("1", "12:00 pm", "Surprise Inspection");
+        Inspection Inspection_2 = new Inspection ("2", "1:00 pm", "Drug Inspection");
+        Inspection Inspection_3 = new Inspection ("3", "12:00 pm", "Safety Inspection");
         
         Student student_1 = new Student ("1", "Louie", "hernandez", "11-01-95");
         Student student_2 = new Student ("2", "Adil", "Ahmad", "03-11-96");
         Student student_3 = new Student ("3", "Scooby", "Doo", "09-13-69");
         Student student_4 = new Student ("4", "Donald", "Trump", "01-20-17");
         
-        Maintenance maintenance_1 = new Maintenance("1", "water", 100.50);
-        Maintenance maintenance_2 = new Maintenance("2", "gas", 10.50);
-        Maintenance maintenance_3 = new Maintenance("3", "electric", 150.50);
+        Maintenance maintenance_1 = new Maintenance("1", "Leaky Faucet", 110.50);
+        Maintenance maintenance_2 = new Maintenance("2", "Broken Toilet", 100.50);
+        Maintenance maintenance_3 = new Maintenance("3", "Gas Leak", 150.50);
         
         Use_Interface FacUse1 = new FacilityUse ();
         FacUse1.assignFacilityToUse(student_1,Facility_1);
         FacUse1.assignFacilityToUse(student_1,Facility_2);
         FacUse1.vacateFacility(student_1, Facility_2);
-        FacUse1.addInspection(Facility_1, I1);
+        FacUse1.addInspection(Facility_1, Inspection_1);
+        System.out.println();
         System.out.println("INSPECTIONS FOR FACILITY " + Facility_1.getFacilityInfo());
         FacUse1.listInspection(Facility_1);
         System.out.println();
         System.out.println("FACILITIES USED BY PERSON: " + student_1.getFullName());
         student_1.listPersonFacilities();
+        System.out.println();
         System.out.println("ACTUAL USAGE FOR FACILITY: " + Facility_1.getFacilityInfo());
         FacUse1.listActualUsage(Facility_1);
-
+        System.out.println();
         //Main
         MaintenanceUsage_Interface maintenance_Usage = new MainRequest();
         maintenance_Usage.makeFacilityMaintRequest(maintenance_1, Facility_1);
         maintenance_Usage.makeFacilityMaintRequest(maintenance_2, Facility_2);
         maintenance_Usage.makeFacilityMaintRequest(maintenance_3, Facility_1);
+        System.out.println();
         System.out.println("LIST OF MAINTENANCE REQUESTS BY FACILITIES: ");
         maintenance_Usage.listMaintenanceRequest();
+        System.out.println();
         System.out.println("LIST OF SCHEDULED MAINTENANCE: ");
         ArrayList<Maintenance> temp = new ArrayList<Maintenance>();
         temp.add(maintenance_1);
         temp.add(maintenance_3);
         maintenance_Usage.scheduleMaintenance(Facility_1, temp);
         maintenance_Usage.listMaintenance();
+        System.out.println();
         System.out.println("MAINTENANCE COST FOR FACILITY 1");
         maintenance_Usage.calcMaintenanceCost(Facility_1);
         System.out.println("PROBLEM RATE FOR MAINTENANCE: ");

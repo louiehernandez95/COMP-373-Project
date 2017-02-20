@@ -1,11 +1,7 @@
 package Student_Detail;
 
 import java.util.ArrayList;
-
-import Facility.Facility;
 import Facility.Facility_Interface;
-import Usage.Use_Interface;
-
 
 public class Student {
 
@@ -74,7 +70,7 @@ public class Student {
         return this.dateOfBirth;
     }
 
-    public void setDOB(String DateOfBirth){
+    public void setDateOfBirth(String DateOfBirth){
         this.dateOfBirth = DateOfBirth;
     }
 

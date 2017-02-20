@@ -4,18 +4,18 @@ public class Inspection {
 	
 	private String id;
 	private String time;
-	private String summary;
+	private String type;
 	
 	public Inspection() {
 		id = null;
 		time = null;
-		summary = null;
+		type = null;
 	}
 
-	public Inspection(String id, String time, String summary) {
+	public Inspection(String id, String time, String type) {
 		this.id = id;
 		this.time = time;
-		this.summary = summary;
+		this.type = type;
 	}
 
 	public String getId() {
@@ -36,11 +36,11 @@ public class Inspection {
 	}
 
 	public String getSummary() {
-		return summary;
+		return type;
 	}
 
 	public String toString() {
-		return summary + " " + this.time;
+		return type + " " + this.time;
 	}
 
 }
