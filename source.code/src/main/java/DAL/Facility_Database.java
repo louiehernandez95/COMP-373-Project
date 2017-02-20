@@ -9,19 +9,18 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.ArrayList;
 
-import facility-detail.facility-detail;
-import Usage Detail.person-detail;
+import Facility.Facility;
+import Student_Detail.Student;
 
-public class FacilityDatabase {
-
+public class Facility_Database {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/FMS";
+    static final String DB_URL = "jdbc:mysql://localhost/3306/";
 
     //  Database credentials
     static final String USER = "root";
-    static final String PASS = "root";
+    static final String PASS = "1stbeaner";
 
-    public FacilityDatabase(){
+    public Facility_Database(){
         try{
             Class.forName(JDBC_DRIVER);
         }
@@ -254,19 +253,18 @@ public class FacilityDatabase {
         }
         return success;
     }
-    public Object assignFacilityToUse(Person person){
+    public Object assignFacilityToUse(Student student){
         Connection con = null;
         PreparedStatement pstmt = null;
         int success = 0;
         try{
             con = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            String sql = "INSERT FROM PERSON (NAME, ADDRESS, PHONE) INTO FACILITY";
+            String sql = "INSERT FROM PERSON (NAME, ADDRESS) INTO FACILITY";
             pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, person.getFirstName());
-            pstmt.setString(2, person.getLastName());
-            pstmt.setString(3, String.valueOf(person.getAddress()));
-            pstmt.setString(4, String.valueOf(person.getPhone()));
+            pstmt.setString(1, student.getFirstName());
+            pstmt.setString(2, student.getLastName());
+            pstmt.setString(3, String.valueOf(student.getAddress()));
             success = pstmt.executeUpdate();
         }
         catch(SQLException exception){
@@ -291,14 +289,14 @@ public class FacilityDatabase {
     }
 
 
-    public Object vacateFacility(Person person) {
+    public Object vacateFacility(Student student) {
         Connection con = null;
         PreparedStatement pstmt = null;
         int success = 0;
         try{
             con = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            String sql = "DELETE FROM FACILITY WHERE PERSON = "+ person.getFullName();
+            String sql = "DELETE FROM FACILITY WHERE PERSON = "+ student.getFullName();
             pstmt = con.prepareStatement(sql);
             pstmt.executeUpdate();
         }
