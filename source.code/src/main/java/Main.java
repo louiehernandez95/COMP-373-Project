@@ -81,6 +81,7 @@ public class Main
         System.out.println();
         System.out.println("MAINTENANCE COST FOR FACILITY 1");
         maintenance_Usage.calcMaintenanceCost(Facility_1);
+        maintenance_Usage.calcDownTime(Facility_1);
         System.out.println("PROBLEM RATE FOR MAINTENANCE: ");
         maintenance_Usage.calcProblemRate(Facility_1);
     }

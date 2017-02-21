@@ -11,8 +11,8 @@ public class MainRequest implements MaintenanceUsage_Interface{
     private Facility facility;
     private Maintenance maintenance;
     private ArrayList<Facility_Interface> facilities = new ArrayList<Facility_Interface>();
-    public HashMap<Maintenance,Facility_Interface> maintenanceRequests = new HashMap<Maintenance,Facility_Interface>(); //request for this maintainance came from this facility
-    public HashMap<Facility_Interface, ArrayList<Maintenance>> scheduledMaintenances = new HashMap<Facility_Interface, ArrayList<Maintenance>>(); //this facility needs this maintainance
+    public HashMap<Maintenance,Facility_Interface> maintenanceRequests = new HashMap<Maintenance,Facility_Interface>();
+    public HashMap<Facility_Interface, ArrayList<Maintenance>> scheduledMaintenances = new HashMap<Facility_Interface, ArrayList<Maintenance>>();
     private ArrayList <Facility_Interface> temp = new ArrayList<Facility_Interface>();
     public MainRequest(){}
 
@@ -66,7 +66,18 @@ public class MainRequest implements MaintenanceUsage_Interface{
     }
 
     public void calcDownTime(Facility_Interface facility) {
-        return;
+        int closed=0;
+        for (Entry<Maintenance, Facility_Interface> entry : maintenanceRequests.entrySet()){
+            if (entry.getValue() == facility){
+                if (entry.getKey().getType() == "Leaky Faucet")
+                    closed+=3;
+                else if (entry.getKey().getType() == "Broken Toilet")
+                    closed+=4;
+                else if (entry.getKey().getType() == "Gas Leak")
+                    closed+=5;
+            }
+        }
+        System.out.println("The Facility will be closed for "+closed+" hours.");
     }
 
     public void listFacilityProblems(Facility_Interface facility) {
