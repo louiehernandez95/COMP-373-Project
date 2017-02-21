@@ -8,13 +8,15 @@ import Student_Detail.Student;
 
 public class FacilityUse implements Use_Interface{
 
-    public FacilityUse(){}
-
-
-    public boolean isInUseDuringInterval() {
-        return false;
+    /*
+    public boolean isInUseDuringInterval(int OpenH, int OpenM, int CloseH, int CloseM, int ArrivalH, int ArrivalM) {
+        if (OpenH*60+OpenM < ArrivalH*60+ArrivalM < CloseH*60+CloseM)
+            System.out.println("Yes, the facility will be open for when you arrive");
+            return True;
+        else:
+            return false;
     }
-
+    */
     public void assignFacilityToUse(Student student, Facility_Interface facility) {
         student.usesFacility.add(facility);
 
@@ -39,10 +41,12 @@ public class FacilityUse implements Use_Interface{
     public void listActualUsage(Facility_Interface facility) {
         System.out.println(facility.getUsage());
     }
-
-    public double calcUsageRate() {
-        return 0;
+/*
+    public double calcUsageRate(Facility_Interface facility,Facility_Interface facility2,Facility_Interface facility3) {
+        double calcUsage=0.0;
+        calcUsage=facility.getUsage()+facility2.getUsage()+facility3.getUsage()/3;
+        return calcUsage;
     }
-
+*/
 
 }

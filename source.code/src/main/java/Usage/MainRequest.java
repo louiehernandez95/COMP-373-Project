@@ -84,7 +84,7 @@ public class MainRequest implements MaintenanceUsage_Interface{
         for (Entry< Facility_Interface , ArrayList<Maintenance>> entry : scheduledMaintenances.entrySet()){
             if (entry.getKey() == facility){
                 for (Maintenance m : entry.getValue())
-                    System.out.println(m.getType());
+                        System.out.println(m.getType());
             }
         }
     }

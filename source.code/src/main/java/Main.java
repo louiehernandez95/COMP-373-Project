@@ -47,6 +47,7 @@ public class Main
         Maintenance maintenance_1 = new Maintenance("1", "Leaky Faucet", 110.50);
         Maintenance maintenance_2 = new Maintenance("2", "Broken Toilet", 100.50);
         Maintenance maintenance_3 = new Maintenance("3", "Gas Leak", 150.50);
+        Maintenance maintenance_4 = new Maintenance("4", "Gas Leak", 150.50);
         
         Use_Interface FacUse1 = new FacilityUse ();
         FacUse1.assignFacilityToUse(student_1,Facility_1);
@@ -68,6 +69,7 @@ public class Main
         maintenance_Usage.makeFacilityMaintRequest(maintenance_1, Facility_1);
         maintenance_Usage.makeFacilityMaintRequest(maintenance_2, Facility_2);
         maintenance_Usage.makeFacilityMaintRequest(maintenance_3, Facility_1);
+        maintenance_Usage.makeFacilityMaintRequest(maintenance_4, Facility_1);
         System.out.println();
         System.out.println("LIST OF MAINTENANCE REQUESTS BY FACILITIES: ");
         maintenance_Usage.listMaintenanceRequest();
@@ -84,5 +86,6 @@ public class Main
         maintenance_Usage.calcDownTime(Facility_1);
         System.out.println("PROBLEM RATE FOR MAINTENANCE: ");
         maintenance_Usage.calcProblemRate(Facility_1);
+
     }
 }

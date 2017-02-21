@@ -12,4 +12,5 @@ public interface MaintenanceUsage_Interface {
     void listMaintenanceRequest();
     void listMaintenance();
     void calcDownTime(Facility_Interface facility);
+    void listFacilityProblems(Facility_Interface facility);
 }
