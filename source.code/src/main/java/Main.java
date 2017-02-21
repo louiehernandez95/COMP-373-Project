@@ -21,9 +21,9 @@ public class Main
         Address address_2 = new Address ("2", "6340 N Winthrop Ave", "Chicago","IL","60660","United States");
         Address address_3 = new Address ("3", "6317 N Kenmore Ave", "Chicago","IL","60660","United States");
 
-        Facility Facility_1 = new Facility("Facility 1", "Mertz Hall", "100 * 100", 10, address_1);
-        Facility Facility_2 = new Facility("Facility 2", "Regis Hall", "100 * 100", 10, address_2);
-        Facility Facility_3 = new Facility("Facility 3", "San Francisco Hall", "100 * 100", 10, address_3);
+        Facility Facility_1 = new Facility("Mertz Hall", "Dorm", "100 * 100", 10, address_1);
+        Facility Facility_2 = new Facility("Regis Hall", "Dorm", "100 * 100", 10, address_2);
+        Facility Facility_3 = new Facility("San Francisco Hall", "Dorm", "100 * 100", 10, address_3);
 
         Facility_1.setUsage(152.1);
         Facility_2.setUsage(142.1);

@@ -7,7 +7,7 @@ import Student_Detail.Address;
 
 public class Facility implements Facility_Interface{
 	
-	private String id = null;
+	private String name = null;
 	private String facilityType = null; 
 	private String dimensions = null;
 	private Address address;
@@ -29,9 +29,9 @@ public class Facility implements Facility_Interface{
   	    Units = new ArrayList<Unit>(10);
 	}
 	//overload
-	public Facility(String id, String Dorm, String Dimensions, int Capacity, Address address){
-		this.setId(id);
-		this.facilityType = Dorm;
+	public Facility(String Name, String FacilityType, String Dimensions, int Capacity, Address address){
+		this.setName(Name);
+		this.facilityType = FacilityType;
 		this.dimensions = Dimensions;
 		this.address = address;
 		this.capacity = Capacity;
@@ -45,7 +45,7 @@ public class Facility implements Facility_Interface{
 	}
 
 	public String getFacilityInfo() {
-		return this.getId() + " " + this.facilityType + " " + this.address;
+		return this.getName() + " " + this.facilityType + " " + this.address;
 	}
 	
 
@@ -89,12 +89,12 @@ public class Facility implements Facility_Interface{
 
 		inspections.add(inspection);
 	}
-	public String getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
-	public void setId(String id) {
+	public void setName(String name) {
 
-		this.id = id;
+		this.name = name;
 	}
 	public String getFacilityType() {
 

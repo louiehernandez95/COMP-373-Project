@@ -41,7 +41,7 @@ public class Facility_Database {
             resultSet = stmt.executeQuery(sql);
             while(resultSet.next()){
                 Facility facility = new Facility();
-                facility.setId(resultSet.getString("ID"));
+                facility.setName(resultSet.getString("ID"));
                 facility.setFacilityType(resultSet.getString("FACILITY_TYPE"));
                 facility.setDimensions(resultSet.getString("FACILITY_DIMENSION"));
                 facility.setCapacity(Integer.valueOf(resultSet.getString("CAPACITY")));
@@ -81,7 +81,7 @@ public class Facility_Database {
             con = DriverManager.getConnection(DB_URL, USER, PASS);
             String sql = "INSERT INTO FACILITY (ID, FACILITY_TYPE, FACILITY_DIMENSION, CAPACITY, ADDRESS) VALUES (?,?,?,?)";
             pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, facility.getId());
+            pstmt.setString(1, facility.getName());
             pstmt.setString(2, facility.getFacilityType());
             pstmt.setString(3, facility.getDimensions());
             pstmt.setInt(4, facility.getAvailableCapacity());
@@ -126,7 +126,7 @@ public class Facility_Database {
                 facility.setFacilityType(rs.getString("FACILITY_TYPE"));
                 facility.setDimensions(rs.getString("FACILITY_DIMENSION"));
                 facility.setUsage(rs.getDouble("USAGE"));
-                facility.setId(rs.getString("ID"));
+                facility.setName(rs.getString("ID"));
             }
         }
         catch(SQLException exception){
