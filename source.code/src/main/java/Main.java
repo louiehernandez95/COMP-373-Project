@@ -11,6 +11,7 @@ import Usage.FacilityUse;
 import Usage.MainRequest;
 import Usage.Use_Interface;
 import Usage.MaintenanceUsage_Interface;
+import DAL.Facility_Database;
 
 
 public class Main 
@@ -86,6 +87,5 @@ public class Main
         maintenance_Usage.calcDownTime(Facility_1);
         System.out.println("PROBLEM RATE FOR MAINTENANCE: ");
         maintenance_Usage.calcProblemRate(Facility_1);
-
     }
 }

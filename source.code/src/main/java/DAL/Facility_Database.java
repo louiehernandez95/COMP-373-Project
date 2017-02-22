@@ -14,7 +14,7 @@ import Student_Detail.Student;
 
 public class Facility_Database {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/3306/";
+    static final String DB_URL = "jdbc:mysql://localhost/facility/";
 
     //  Database credentials
     static final String USER = "root";
@@ -37,11 +37,11 @@ public class Facility_Database {
         try{
             con = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = con.createStatement();
-            String sql = "SELECT ID, FACILITY_TYPE, FACILITY_DIMENSION, CAPACITY, ADDRESS FROM FACILITY";
+            String sql = "SELECT NAME, FACILITY_TYPE, FACILITY_DIMENSION, CAPACITY, ADDRESS FROM FACILITY";
             resultSet = stmt.executeQuery(sql);
             while(resultSet.next()){
                 Facility facility = new Facility();
-                facility.setName(resultSet.getString("ID"));
+                facility.setName(resultSet.getString("NAME"));
                 facility.setFacilityType(resultSet.getString("FACILITY_TYPE"));
                 facility.setDimensions(resultSet.getString("FACILITY_DIMENSION"));
                 facility.setCapacity(Integer.valueOf(resultSet.getString("CAPACITY")));
@@ -79,7 +79,7 @@ public class Facility_Database {
         PreparedStatement pstmt = null;
         try{
             con = DriverManager.getConnection(DB_URL, USER, PASS);
-            String sql = "INSERT INTO FACILITY (ID, FACILITY_TYPE, FACILITY_DIMENSION, CAPACITY, ADDRESS) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO FACILITY (NAME, FACILITY_TYPE, FACILITY_DIMENSION, CAPACITY, ADDRESS) VALUES (?,?,?,?)";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, facility.getName());
             pstmt.setString(2, facility.getFacilityType());
@@ -119,14 +119,14 @@ public class Facility_Database {
         try{
             con = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = con.createStatement();
-            String sql = "SELECT ID, FACILITY_TYPE, FACILITY_DIMENSION, USAGE, CAPACITY, FACILITY_NO="+facilityNo;
+            String sql = "SELECT NAME, FACILITY_TYPE, FACILITY_DIMENSION, USAGE, CAPACITY, FACILITY_NO="+facilityNo;
             rs = stmt.executeQuery(sql);
             while(rs.next()){
                 facility.setCapacity(rs.getInt("CAPACITY"));
                 facility.setFacilityType(rs.getString("FACILITY_TYPE"));
                 facility.setDimensions(rs.getString("FACILITY_DIMENSION"));
                 facility.setUsage(rs.getDouble("USAGE"));
-                facility.setName(rs.getString("ID"));
+                facility.setName(rs.getString("Name"));
             }
         }
         catch(SQLException exception){
@@ -260,7 +260,7 @@ public class Facility_Database {
         try{
             con = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            String sql = "INSERT FROM PERSON (NAME, ADDRESS) INTO FACILITY";
+            String sql = "INSERT FROM STUDENT (NAME, ADDRESS) INTO FACILITY";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, student.getFirstName());
             pstmt.setString(2, student.getLastName());
@@ -296,7 +296,7 @@ public class Facility_Database {
         try{
             con = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            String sql = "DELETE FROM FACILITY WHERE PERSON = "+ student.getFullName();
+            String sql = "DELETE FROM FACILITY WHERE STUDENT = "+ student.getFullName();
             pstmt = con.prepareStatement(sql);
             pstmt.executeUpdate();
         }
